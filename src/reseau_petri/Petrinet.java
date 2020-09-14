@@ -56,9 +56,14 @@ public class Petrinet {
 
 		for (Transition transition : this.transitions) {
 			if (arc instanceof ArcPT) {
-				transition.deleteArcPT((ArcPT) arc);
+				if(transition.getArcsPT().contains(arc)) {
+					transition.deleteArcPT((ArcPT) arc);
+				}
+				
 			} else {
+				if(transition.getArcsTP().contains(arc)) {
 				transition.deleteArcTP((ArcTP) arc);
+				}
 			}
 		}
 	}
@@ -198,21 +203,20 @@ public class Petrinet {
 		System.out.print(place4.toString());
 		System.out.print(place5.toString());
 		
-		System.out.println("transition1 size: "+transition1.getArcsTP().size());
-		System.out.println("transition2 size: "+transition2.getArcsTP().size());
 		
 		try {
 			petrinet.deletePlace(place3);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		System.out.println("Delete plance 3");
 		System.out.println("transition1 size: "+transition1.getArcsTP().size());
 		System.out.println("transition2 size: "+transition2.getArcsTP().size());
 		
 		System.out.println("transition1 size: "+transition1.getArcsPT().size());
 		System.out.println("transition2 size: "+transition2.getArcsPT().size());
 		
+		System.out.println("Delete plance 1");
 		try {
 			petrinet.deletePlace(place1);
 		} catch (Exception e) {
