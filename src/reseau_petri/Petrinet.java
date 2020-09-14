@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author IML A petrinet contains places and transitions. Arcs link places and
- *         transitions together. When a petrinet runs, it pulls every pullable
- *         transition. When none of them are left, the running stops.
+ * @author IML A petrinet contains places and transitions. An arcs links a place
+ *         and a transition together. When Petrinet runs, it pulls every
+ *         pullable transition. When none of them are left, the running stops.
  * 
  */
 public class Petrinet {
-	
 
-	private List<Transition> transitions;
-	private List<Place> places;
+	private List<Transition> transitions; // transitions know the arcs and by extension places, hence
+	private List<Place> places; // useful to garanty that deleting an arc won't make the related place disappear
+								// from the petrinet
 
 	/**
 	 * Default constructor : initializes a Petrinet without any places, transitions
@@ -26,29 +26,39 @@ public class Petrinet {
 	}
 
 	/**
-	 * @param transition Adds a transition to the Petrinet.
+	 * @param transition 
+	 * Adds a transition to the petrinet.
 	 */
 	public void addTransition(Transition transition) {
 		this.transitions.add(transition);
 	}
-	
+
+	/**
+	 * @param place
+	 * Adds a place to the petrinet.
+	 */
 	public void addPlace(Place place) {
-		if(!this.places.contains(place)) {
+		if (!this.places.contains(place)) {
 			this.places.add(place);
 		}
 	}
 
 	/**
-	 * @param transition Removes a transition from the Petrinet.
+	 * @param transition Removes a transition and its connected arcs from the
+	 *                   petrinet.
 	 */
 	public void deleteTransition(Transition transition) {
-		// arcs cannot exist without the associated transition, places can.
+		// arcs cannot exist without the associated transition, while places can.
 		// no need to remove the arcs directly : since they are contained in the
 		// transition, once the transition is gone, they won't be accessible to the
 		// user. The places will still be.
 		this.transitions.remove(transition);
 	}
 
+	/**
+	 * @param arc
+	 * @throws Exception Deletes an Arc from the petrinet.
+	 */
 	public void deleteArc(Arc arc) throws Exception {
 		// arcs are stocked in the transition, hence it is necessary to delete them in
 		// the transition, depending on their arc type.
@@ -56,18 +66,22 @@ public class Petrinet {
 
 		for (Transition transition : this.transitions) {
 			if (arc instanceof ArcPT) {
-				if(transition.getArcsPT().contains(arc)) {
+				if (transition.getArcsPT().contains(arc)) {
 					transition.deleteArcPT((ArcPT) arc);
 				}
-				
+
 			} else {
-				if(transition.getArcsTP().contains(arc)) {
-				transition.deleteArcTP((ArcTP) arc);
+				if (transition.getArcsTP().contains(arc)) {
+					transition.deleteArcTP((ArcTP) arc);
 				}
 			}
 		}
 	}
 
+	/**
+	 * @param place
+	 * @throws Exception Deletes a place and the linked arcs from the petrinet.
+	 */
 	public void deletePlace(Place place) throws Exception {
 		// arcs cannot exist without the associated place.
 		// arcs need to be deleted from the associated transition.
@@ -88,7 +102,7 @@ public class Petrinet {
 				}
 
 			}
-			
+
 			this.places.remove(place);
 		}
 
@@ -98,7 +112,7 @@ public class Petrinet {
 	 * @param place
 	 * @param token
 	 * 
-	 *              Adds a specified number of tokens to a selected place.
+	 * Adds a specified number of tokens to a selected place.
 	 */
 	public void addToken(Place place, int token) {
 		place.setToken(token);
@@ -181,60 +195,58 @@ public class Petrinet {
 		petrinet.addPlace(place4);
 		petrinet.addPlace(place5);
 
-		System.out.println(place1 );
-		System.out.println(place2 );
-		System.out.println(place3 );
-		System.out.println(place4 );
-		System.out.println(place5 );
+		System.out.println(place1);
+		System.out.println(place2);
+		System.out.println(place3);
+		System.out.println(place4);
+		System.out.println(place5);
 
 		petrinet.run();
 
-		System.out.println(place1 );
-		System.out.println(place2 );
-		System.out.println(place3 );
-		System.out.println(place4 );
-		System.out.println(place5 );
+		System.out.println(place1);
+		System.out.println(place2);
+		System.out.println(place3);
+		System.out.println(place4);
+		System.out.println(place5);
 
 		petrinet.run();
 
-		System.out.println(place1 );
-		System.out.println(place2 );
-		System.out.println(place3 );
-		System.out.println(place4 );
-		System.out.println(place5 );
-		
-		
+		System.out.println(place1);
+		System.out.println(place2);
+		System.out.println(place3);
+		System.out.println(place4);
+		System.out.println(place5);
+
 		try {
 			petrinet.deletePlace(place3);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		System.out.println("Delete plance 3");
-		System.out.println("transition1 size: "+transition1.getArcsTP().size());
-		System.out.println("transition2 size: "+transition2.getArcsTP().size());
-		
-		System.out.println("transition1 size: "+transition1.getArcsPT().size());
-		System.out.println("transition2 size: "+transition2.getArcsPT().size());
-		
+		System.out.println("transition1 size: " + transition1.getArcsTP().size());
+		System.out.println("transition2 size: " + transition2.getArcsTP().size());
+
+		System.out.println("transition1 size: " + transition1.getArcsPT().size());
+		System.out.println("transition2 size: " + transition2.getArcsPT().size());
+
 		System.out.println("Delete plance 1");
 		try {
 			petrinet.deletePlace(place1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		System.out.println("transition1 size: "+transition1.getArcsPT().size());
-		System.out.println("transition2 size: "+transition2.getArcsPT().size());
-		
+
+		System.out.println("transition1 size: " + transition1.getArcsPT().size());
+		System.out.println("transition2 size: " + transition2.getArcsPT().size());
+
 		try {
 			petrinet.deleteArc(arcPT2);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("transition2 size: "+transition2.getArcsPT().size());
-		
+		System.out.println("transition2 size: " + transition2.getArcsPT().size());
+
 		petrinet.deleteTransition(transition2);
-		
 
 	}
 

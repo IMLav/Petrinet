@@ -1,9 +1,11 @@
 package reseau_petri;
 
 /**
- * @author IML A place is represented by a circle. Each place contains a number
- *         of tokens. A place is liked to places though transitions. Each place
- *         has its own unique ID.
+ * @author IML
+ * 
+ *         A place is represented by a circle. Each place contains a number of
+ *         tokens. A place is liked to places though transitions. Each place has
+ *         its own unique ID.
  */
 
 public class Place {
@@ -22,8 +24,10 @@ public class Place {
 	}
 
 	/**
-	 * @param nbTokens Constructor : initializes a place containing the number of
-	 *                 tokens given as parameter.
+	 * Constructor : initializes a place containing the number of tokens given as
+	 * parameter.
+	 * 
+	 * @param nbTokens
 	 */
 	public Place(int token) {
 		assert token > 0;
@@ -33,14 +37,16 @@ public class Place {
 	}
 
 	/**
-	 * @return nbTokens Retrieves the number of tokens.
+	 * Retrieves the number of tokens.
+	 * @return nbTokens 
 	 */
 	public int getNbToken() {
 		return this.nbTokens;
 	}
 
 	/**
-	 * @param nbTokens Sets the number of tokens.
+	 * Sets the number of tokens.
+	 * @param nbTokens 
 	 */
 	public void setToken(int nbTokens) {
 		assert nbTokens > 0;

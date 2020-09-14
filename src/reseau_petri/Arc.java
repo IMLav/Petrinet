@@ -4,7 +4,7 @@ package reseau_petri;
  * @author IML An arc connects a place to a transition, regardless of the order.
  */
 
-abstract class Arc {
+public abstract class Arc {
 
 	protected int DEFAULTWEIGHT = 1;
 
@@ -13,14 +13,15 @@ abstract class Arc {
 	protected int id;
 
 	/**
-	 * @return Returns the weight of the arc.
+	 * @return the weight of the arc.
 	 */
 	public int getWeight() {
 		return this.weight;
 	}
 
 	/**
-	 * @param weight Sets the weight of the arc.
+	 * Sets the weight of the arc.
+	 * @param weight 
 	 */
 	protected void setWeight(int weight) {
 		this.weight = weight;

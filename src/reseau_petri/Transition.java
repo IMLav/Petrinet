@@ -8,6 +8,10 @@ import java.util.List;
  *         linked to no or several places though ArcPT and ArcTP. Each
  *         transition has is own unique IDVALUE.
  */
+/**
+ * @author IML
+ *
+ */
 public class Transition {
 
 	private static int IDVALUE = 1;
@@ -58,6 +62,10 @@ public class Transition {
 		}
 	}
 
+	/**
+	 * @param arcPT
+	 * @throws Exception
+	 */
 	public void deleteArcPT(ArcPT arcPT) throws Exception {
 		if (arcsPT.contains(arcPT)) {
 			this.arcsPT.remove(arcPT);
@@ -66,6 +74,10 @@ public class Transition {
 		}
 	}
 
+	/**
+	 * @param arcTP
+	 * @throws Exception
+	 */
 	public void deleteArcTP(ArcTP arcTP) throws Exception {
 		if (arcsTP.contains(arcTP)) {
 			this.arcsTP.remove(arcTP);

@@ -8,6 +8,9 @@ public class ZeroArc extends ArcPT {
 		super(place);
 	}
 
+	/**
+	 *A ZeroArc is pullable when the number of tokens in the place is 0.
+	 */
 	public boolean isPullable() {
 		boolean isPullable = false;
 		if (this.place.getNbToken() == 0) {
@@ -16,6 +19,9 @@ public class ZeroArc extends ArcPT {
 		return isPullable;
 	}
 	
+	/**
+	 *When a ZeroArc is pulled, the number of Tokens in the place remains 0.
+	 */
 	public void pull() {
 		assert weight == 0;
 		this.place.setToken(this.place.getNbToken() - this.weight);
