@@ -3,52 +3,100 @@ package reseau_petri;
 import java.util.ArrayList;
 import java.util.List;
 
-class Transition {
-	
-	
-	private static int DEFAULTIDVALUE =1;
+/**
+ * @author IML A transition is represented by a square. A transition can be
+ *         linked to no or several places though ArcPT and ArcTP. Each
+ *         transition has is own unique IDVALUE.
+ */
+public class Transition {
+
+	private static int IDVALUE = 1;
 	private List<ArcPT> arcsPT;
 	private List<ArcTP> arcsTP;
 	private int id;
 
-	
+	/**
+	 * Default constructor of a Transition. The transition is not linked to any
+	 * places.
+	 */
 	public Transition() {
-		
+
 		this.arcsPT = new ArrayList<ArcPT>();
 		this.arcsTP = new ArrayList<ArcTP>();
-		this.id = DEFAULTIDVALUE;
-		DEFAULTIDVALUE +=1;
+		this.id = IDVALUE;
+		IDVALUE += 1;
 	}
-	
-	// pas sûre encapsulation
-	
-	public void addArcPT(ArcPT arcPT) {
-		this.arcsPT.add(arcPT);
-	}
-	public void addArcTP(ArcTP arcTP) {
-		this.arcsTP.add(arcTP);
-	}
-	
 
-	
+	public List<ArcPT> getArcsPT() {
+		return this.arcsPT;
+	}
+
+	public List<ArcTP> getArcsTP() {
+		return this.arcsTP;
+	}
+
+	/**
+	 * @param arcPT This method allows to add an ArcPT given as parameter to the
+	 *              transition. The transition is then linked to an entering Place.
+	 * @throws Exception
+	 */
+	public void addArcPT(ArcPT arcPT) throws Exception {
+		if (!arcsPT.contains(arcPT)) {
+			this.arcsPT.add(arcPT);
+		} else {
+			throw new Exception("Please stop deleting a non-existing ArcPT");
+		}
+	}
+
+	/**
+	 * @param arcTP This method allows to add an ArcTP given as parameter to the
+	 *              transition. The transition is then linked to an exiting Place.
+	 */
+	public void addArcTP(ArcTP arcTP) {
+		if (!arcsTP.contains(arcTP)) {
+			this.arcsTP.add(arcTP);
+		}
+	}
+
+	public void deleteArcPT(ArcPT arcPT) throws Exception {
+		if (arcsPT.contains(arcPT)) {
+			this.arcsPT.remove(arcPT);
+		}else {
+			throw new Exception("Please stop deleting a non-existing ArcTP");
+		}
+	}
+
+	public void deleteArcTP(ArcTP arcTP) {
+		if (arcsTP.contains(arcTP)) {
+			this.arcsTP.remove(arcTP);
+		}
+
+	}
+
+	/**
+	 * This method implements a step in the running of the Petrinet. A step
+	 * corresponds to the following operations: - checking if the transition is
+	 * pullable (all the connected arcs can be pulled). - if so, pulling all the
+	 * connected arcs.
+	 */
 	public void step() {
 		boolean isTransitionPullable = true;
-			for (int i=0; i< this.arcsPT.size(); i++) {
+		if (isTransitionPullable) {
+			for (int i = 0; i < this.arcsPT.size(); i++) {
 				isTransitionPullable = this.arcsPT.get(i).isPullable();
 			}
-			System.out.print("La transition " +this.id+ " est tirable : "+isTransitionPullable+ Petrinet.Newline);
+		}
 
-			if (isTransitionPullable == true) {
-				for(int i=0; i<this.arcsPT.size(); i++) {
-					this.arcsPT.get(i).pull();
-				}
-				for(int i=0; i<this.arcsTP.size(); i++) {
-					this.arcsTP.get(i).pull();
-				}
+		System.out.print("La transition " + this.id + " est tirable : " + isTransitionPullable + Petrinet.NEWLINE);
+
+		if (isTransitionPullable == true) {
+			for (int i = 0; i < this.arcsPT.size(); i++) {
+				this.arcsPT.get(i).pull();
 			}
+			for (int i = 0; i < this.arcsTP.size(); i++) {
+				this.arcsTP.get(i).pull();
+			}
+		}
 	}
+
 }
-	
-	
-
-
