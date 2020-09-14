@@ -61,14 +61,16 @@ public class Transition {
 	public void deleteArcPT(ArcPT arcPT) throws Exception {
 		if (arcsPT.contains(arcPT)) {
 			this.arcsPT.remove(arcPT);
-		}else {
-			throw new Exception("Please stop deleting a non-existing ArcTP");
+		} else {
+			throw new Exception("Please stop deleting a non-existing ArcPT");
 		}
 	}
 
-	public void deleteArcTP(ArcTP arcTP) {
+	public void deleteArcTP(ArcTP arcTP) throws Exception {
 		if (arcsTP.contains(arcTP)) {
 			this.arcsTP.remove(arcTP);
+		} else {
+			throw new Exception("Please stop deleting a non-existing ArcTP");
 		}
 
 	}
@@ -79,22 +81,33 @@ public class Transition {
 	 * pullable (all the connected arcs can be pulled). - if so, pulling all the
 	 * connected arcs.
 	 */
+	
+	public void printPullable(Boolean isTransitionPullable) {
+		StringBuilder str = new StringBuilder();
+		str.append("La transition ");
+		str.append(this.id);
+		str.append(" est tirable : ");
+		str.append(isTransitionPullable);
+		System.out.println(str.toString());
+			
+	}
+	
 	public void step() {
 		boolean isTransitionPullable = true;
 		if (isTransitionPullable) {
-			for (int i = 0; i < this.arcsPT.size(); i++) {
-				isTransitionPullable = this.arcsPT.get(i).isPullable();
+			for (ArcPT arcPT: this.arcsPT) {
+				isTransitionPullable = arcPT.isPullable();
 			}
 		}
 
-		System.out.print("La transition " + this.id + " est tirable : " + isTransitionPullable + Petrinet.NEWLINE);
+		printPullable(isTransitionPullable);
 
-		if (isTransitionPullable == true) {
-			for (int i = 0; i < this.arcsPT.size(); i++) {
-				this.arcsPT.get(i).pull();
+		if (isTransitionPullable) {
+			for (ArcPT arcPT: this.arcsPT) {
+				arcPT.pull();
 			}
-			for (int i = 0; i < this.arcsTP.size(); i++) {
-				this.arcsTP.get(i).pull();
+			for (ArcTP arcTP: this.arcsTP) {
+				arcTP.pull();
 			}
 		}
 	}

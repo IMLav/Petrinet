@@ -10,7 +10,7 @@ import java.util.List;
  * 
  */
 public class Petrinet {
-	public static final String NEWLINE = System.getProperty("line.separator");
+	
 
 	private List<Transition> transitions;
 	private List<Place> places;
@@ -181,27 +181,27 @@ public class Petrinet {
 		petrinet.addPlace(place4);
 		petrinet.addPlace(place5);
 
-		System.out.print(place1.toString());
-		System.out.print(place2.toString());
-		System.out.print(place3.toString());
-		System.out.print(place4.toString());
-		System.out.print(place5.toString());
+		System.out.println(place1 );
+		System.out.println(place2 );
+		System.out.println(place3 );
+		System.out.println(place4 );
+		System.out.println(place5 );
 
 		petrinet.run();
 
-		System.out.print(place1.toString());
-		System.out.print(place2.toString());
-		System.out.print(place3.toString());
-		System.out.print(place4.toString());
-		System.out.print(place5.toString());
+		System.out.println(place1 );
+		System.out.println(place2 );
+		System.out.println(place3 );
+		System.out.println(place4 );
+		System.out.println(place5 );
 
 		petrinet.run();
 
-		System.out.print(place1.toString());
-		System.out.print(place2.toString());
-		System.out.print(place3.toString());
-		System.out.print(place4.toString());
-		System.out.print(place5.toString());
+		System.out.println(place1 );
+		System.out.println(place2 );
+		System.out.println(place3 );
+		System.out.println(place4 );
+		System.out.println(place5 );
 		
 		
 		try {
