@@ -1,7 +1,7 @@
 package reseau_petri;
 
 public class ZeroArc extends ArcPT {
-	
+
 	protected int DEFAULTWEIGHT = 0;
 
 	public ZeroArc(Place place) {
@@ -9,7 +9,7 @@ public class ZeroArc extends ArcPT {
 	}
 
 	/**
-	 *A ZeroArc is pullable when the number of tokens in the place is 0.
+	 * A ZeroArc is pullable when the number of tokens in the place is 0.
 	 */
 	public boolean isPullable() {
 		boolean isPullable = false;
@@ -18,9 +18,9 @@ public class ZeroArc extends ArcPT {
 		}
 		return isPullable;
 	}
-	
+
 	/**
-	 *When a ZeroArc is pulled, the number of Tokens in the place remains 0.
+	 * When a ZeroArc is pulled, the number of Tokens in the place remains 0.
 	 */
 	public void pull() {
 		assert weight == 0;

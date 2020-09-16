@@ -21,7 +21,8 @@ public abstract class Arc {
 
 	/**
 	 * Sets the weight of the arc.
-	 * @param weight 
+	 * 
+	 * @param weight
 	 */
 	protected void setWeight(int weight) {
 		this.weight = weight;

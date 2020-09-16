@@ -93,7 +93,7 @@ public class Transition {
 	 * pullable (all the connected arcs can be pulled). - if so, pulling all the
 	 * connected arcs.
 	 */
-	
+
 	public void printPullable(Boolean isTransitionPullable) {
 		StringBuilder str = new StringBuilder();
 		str.append("La transition ");
@@ -101,13 +101,13 @@ public class Transition {
 		str.append(" est tirable : ");
 		str.append(isTransitionPullable);
 		System.out.println(str.toString());
-			
+
 	}
-	
+
 	public void step() {
 		boolean isTransitionPullable = true;
 		if (isTransitionPullable) {
-			for (ArcPT arcPT: this.arcsPT) {
+			for (ArcPT arcPT : this.arcsPT) {
 				isTransitionPullable = arcPT.isPullable();
 			}
 		}
@@ -115,10 +115,10 @@ public class Transition {
 		printPullable(isTransitionPullable);
 
 		if (isTransitionPullable) {
-			for (ArcPT arcPT: this.arcsPT) {
+			for (ArcPT arcPT : this.arcsPT) {
 				arcPT.pull();
 			}
-			for (ArcTP arcTP: this.arcsTP) {
+			for (ArcTP arcTP : this.arcsTP) {
 				arcTP.pull();
 			}
 		}

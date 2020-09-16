@@ -38,7 +38,8 @@ public class Place {
 
 	/**
 	 * Retrieves the number of tokens.
-	 * @return nbTokens 
+	 * 
+	 * @return nbTokens
 	 */
 	public int getNbToken() {
 		return this.nbTokens;
@@ -46,7 +47,8 @@ public class Place {
 
 	/**
 	 * Sets the number of tokens.
-	 * @param nbTokens 
+	 * 
+	 * @param nbTokens
 	 */
 	public void setToken(int nbTokens) {
 		assert nbTokens > 0;

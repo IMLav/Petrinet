@@ -26,16 +26,14 @@ public class Petrinet {
 	}
 
 	/**
-	 * @param transition 
-	 * Adds a transition to the petrinet.
+	 * @param transition Adds a transition to the petrinet.
 	 */
 	public void addTransition(Transition transition) {
 		this.transitions.add(transition);
 	}
 
 	/**
-	 * @param place
-	 * Adds a place to the petrinet.
+	 * @param place Adds a place to the petrinet.
 	 */
 	public void addPlace(Place place) {
 		if (!this.places.contains(place)) {
@@ -112,7 +110,7 @@ public class Petrinet {
 	 * @param place
 	 * @param token
 	 * 
-	 * Adds a specified number of tokens to a selected place.
+	 *              Adds a specified number of tokens to a selected place.
 	 */
 	public void addToken(Place place, int token) {
 		place.setToken(token);
@@ -142,7 +140,7 @@ public class Petrinet {
 	 * @return Returns a boolean that shows whether or not there are remaining
 	 *         transitions to be pulled.
 	 */
-	public boolean areTransitionsLeft() {
+	private boolean areTransitionsLeft() {
 		boolean areTransitionsLeft = false;
 		for (int i = 0; i < this.transitions.size(); i++) {
 			areTransitionsLeft = true;
