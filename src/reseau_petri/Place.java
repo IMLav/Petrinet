@@ -29,9 +29,9 @@ public class Place {
 	 * 
 	 * @param nbTokens
 	 */
-	public Place(int token) {
-		assert token > 0;
-		this.nbTokens = token;
+	public Place(int nbTokens) {
+		assert nbTokens > 0;
+		this.nbTokens = nbTokens;
 		this.id = IDVALUE;
 		IDVALUE += 1;
 	}

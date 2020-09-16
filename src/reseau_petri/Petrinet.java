@@ -222,14 +222,14 @@ public class Petrinet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Delete plance 3");
+		System.out.println("Delete place 3");
 		System.out.println("transition1 size: " + transition1.getArcsTP().size());
 		System.out.println("transition2 size: " + transition2.getArcsTP().size());
 
 		System.out.println("transition1 size: " + transition1.getArcsPT().size());
 		System.out.println("transition2 size: " + transition2.getArcsPT().size());
 
-		System.out.println("Delete plance 1");
+		System.out.println("Delete place 1");
 		try {
 			petrinet.deletePlace(place1);
 		} catch (Exception e) {
