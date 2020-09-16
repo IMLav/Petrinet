@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.4" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="reseau_petri.Petrinet" project="reseau_petri" 
+    file="/reseau_petri/src/reseau_petri/Petrinet.java" binary="false" label="petrinet" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="168" y="0"/>    
+    <execution id="2">      
+      <position height="552" width="76" x="5" y="113"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="489" width="76" x="5" y="155"/>    
+    </execution>  
+  </object>  
+  <object id="7" language="java" name="reseau_petri.Transition" project="reseau_petri" 
+    file="/reseau_petri/src/reseau_petri/Transition.java" binary="false" label="transition" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="91" y="0"/>    
+    <execution id="6">      
+      <position height="447" width="90" x="221" y="176"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="21" width="7" x="127" y="228"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="reseau_petri.ArcPT" project="reseau_petri" 
+    file="/reseau_petri/src/reseau_petri/ArcPT.java" binary="false" label="arcPT" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="314" y="0"/>    
+    <execution id="9">      
+      <position height="21" width="65" x="246" y="197"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="115" width="65" x="246" y="300"/>    
+    </execution>  
+  </object>  
+  <object id="21" language="java" name="reseau_petri.Place" project="reseau_petri" 
+    file="/reseau_petri/src/reseau_petri/Place.java" binary="false" label="place" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="240" y="0"/>    
+    <execution id="18">      
+      <position height="21" width="63" x="248" y="331"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="21" width="63" x="248" y="373"/>    
+    </execution>  
+  </object>  
+  <object id="22" language="java" name="reseau_petri.ArcTP" project="reseau_petri" 
+    file="/reseau_petri/src/reseau_petri/ArcTP.java" binary="false" label="arcTP" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="382" y="0"/>    
+    <execution id="15">      
+      <position height="115" width="65" x="315" y="487"/>    
+    </execution>  
+  </object>  
+  <object id="27" language="java" name="reseau_petri.Place" project="reseau_petri" 
+    file="/reseau_petri/src/reseau_petri/Place.java" binary="false" label="place1" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="521" y="0"/>    
+    <execution id="24">      
+      <position height="21" width="63" x="384" y="518"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="21" width="63" x="384" y="560"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="28" interaction-operator="OPT">    
+    <interaction-operand id="29" constraint="isTransitionPullable">      
+      <fragment refId="12"/>      
+      <fragment refId="19"/>      
+      <fragment refId="23"/>      
+      <fragment refId="14"/>      
+      <fragment refId="25"/>      
+      <fragment refId="17"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <message id="3" operation="run():void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="step():void" asynchronous="false" x="59" y="158">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="8" operation="isPullable():boolean" asynchronous="false" x="146" y="176">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="printPullable(java.lang.Boolean):void" asynchronous="false" x="184" y="211">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="pull():void" asynchronous="false" x="177" y="277">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="pull():void" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="17" operation="getNbToken():int" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="setToken(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="23" operation="getNbToken():int" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="24"/>  
+  </message>  
+  <message id="25" operation="setToken(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="26"/>  
+  </message>
+</sequence-diagram>

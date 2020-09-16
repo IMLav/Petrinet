@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="reseau_petri.Place" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/Place.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="301" width="199" x="168" y="49"/>    
+    <position height="301" width="199" x="72" y="-333"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="reseau_petri.Transition" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/Transition.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="295" width="211" x="456" y="52"/>    
+    <position height="295" width="211" x="586" y="-329"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="reseau_petri.Arc" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/Arc.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="263" y="504"/>    
+    <position height="-1" width="-1" x="168" y="130"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="reseau_petri.ArcPT" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/ArcPT.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="155" width="178" x="-72" y="428"/>    
+    <position height="155" width="178" x="69" y="273"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="reseau_petri.ArcTP" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/ArcTP.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="182" x="413" y="432"/>    
+    <position height="153" width="182" x="322" y="59"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="reseau_petri.EmptyingArc" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/EmptyingArc.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="137" width="155" x="96" y="715"/>    
+    <position height="137" width="155" x="237" y="560"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="reseau_petri.ZeroArc" project="reseau_petri" 
     file="/reseau_petri/src/reseau_petri/ZeroArc.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-30" y="781"/>    
+    <position height="-1" width="-1" x="111" y="626"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,8 +75,7 @@
   </class>  
   <association id="9">    
     <bendpoint x="688" y="208"/>    
-    <bendpoint x="689" y="677"/>    
-    <bendpoint x="193" y="674"/>    
+    <bendpoint x="690" y="354"/>    
     <end type="SOURCE" refId="3" navigable="false">      
       <attribute id="10" name="arcsPT"/>      
       <multiplicity id="11" minimum="0" maximum="2147483647"/>    
