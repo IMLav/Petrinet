@@ -23,7 +23,7 @@ public class EmptyingArc extends ArcPT {
 	/**
 	 * Pulls the transition and sets the number of tokens of the Place to 0.
 	 */
-	protected void pull() {
+	public void pull() {
 		this.place.setToken(0);
 	}
 

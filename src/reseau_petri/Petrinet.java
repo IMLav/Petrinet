@@ -15,6 +15,13 @@ public class Petrinet {
 	private List<Place> places; // useful to garanty that deleting an arc won't make the related place disappear
 								// from the petrinet
 
+	public List<Place> getPlaces(){
+		return this.places;
+	}
+	
+	public List<Transition> getTransitions(){
+		return this.transitions;
+	}
 	/**
 	 * Default constructor : initializes a Petrinet without any places, transitions
 	 * nor arcs.

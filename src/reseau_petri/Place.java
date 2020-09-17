@@ -30,7 +30,7 @@ public class Place {
 	 * @param nbTokens
 	 */
 	public Place(int nbTokens) {
-		assert nbTokens > 0;
+		assert nbTokens >= 0;
 		this.nbTokens = nbTokens;
 		this.id = IDVALUE;
 		IDVALUE += 1;
@@ -51,7 +51,7 @@ public class Place {
 	 * @param nbTokens
 	 */
 	public void setToken(int nbTokens) {
-		assert nbTokens > 0;
+		assert nbTokens >= 0;
 		this.nbTokens = nbTokens;
 	}
 

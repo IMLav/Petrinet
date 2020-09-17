@@ -30,7 +30,7 @@ public class ArcPT extends Arc {
 	 * @param weight
 	 */
 	public ArcPT(Place place, int weight) {
-		assert weight > 0;
+		assert weight >= 0;
 		this.place = place;
 		this.weight = weight;
 		this.id = IDVALUE;
@@ -58,7 +58,7 @@ public class ArcPT extends Arc {
 	 */
 	@Override
 	protected void pull() {
-		assert weight > 0;
+		assert weight >= 0;
 		this.place.setToken(this.place.getNbToken() - this.weight);
 	}
 

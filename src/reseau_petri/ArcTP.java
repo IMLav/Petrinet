@@ -24,7 +24,7 @@ public class ArcTP extends Arc {
 	 *               parameters. Its weight is also passed as a parameter.
 	 */
 	public ArcTP(Place place, int weight) {
-		assert weight > 0;
+		assert weight >= 0;
 		this.place = place;
 		this.weight = weight;
 		this.id = DEFAULTIDVALUE;
@@ -35,8 +35,8 @@ public class ArcTP extends Arc {
 	 * This method pulls the ArcTP. That is, updates the number of tokens contained
 	 * in the linked Place.
 	 */
-	protected void pull() {
-		assert weight > 0;
+	public void pull() {
+		assert weight >= 0;
 		this.place.setToken(this.place.getNbToken() + this.weight);
 
 	}
