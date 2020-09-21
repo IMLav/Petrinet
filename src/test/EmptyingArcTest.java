@@ -6,7 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import reseau_petri.*;
+import reseau_petri.EmptyingArc;
+import reseau_petri.Petrinet;
+import reseau_petri.Place;
+import reseau_petri.Transition;
 
 
 public class EmptyingArcTest {
